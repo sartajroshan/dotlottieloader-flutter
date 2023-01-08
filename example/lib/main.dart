@@ -43,17 +43,27 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               DotLottieLoader.fromAsset("assets/anim2.lottie",
                   frameBuilder: (ctx, dotlottie) {
-                return Lottie.memory(dotlottie!.animations.values.single);
-              }),
-              const SizedBox(height: 20),
-              DotLottieLoader.fromNetwork("assets/anim2.lottie",
-                  frameBuilder: (ctx, dotlottie) {
-                if(dotlottie != null) {
-                  return Lottie.memory(dotlottie!.animations.values.single);
+                if (dotlottie != null) {
+                  return Lottie.memory(dotlottie.animations.values.single);
                 } else {
                   return Container();
                 }
               }),
+              const SizedBox(height: 20),
+              DotLottieLoader.fromNetwork(
+                "https://github.com/sartajroshan/dotlottieloader-flutter/raw/master/example/assets/animation.lottie",
+                frameBuilder: (ctx, dotlottie) {
+                  if (dotlottie != null) {
+                    return Lottie.memory(dotlottie!.animations.values.single);
+                  } else {
+                    return Container();
+                  }
+                },
+                errorBuilder: (ctx, e, s) {
+                  print(s);
+                  return Text(e.toString());
+                },
+              ),
             ],
           ),
         ),

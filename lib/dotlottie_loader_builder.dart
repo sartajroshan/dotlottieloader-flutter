@@ -10,16 +10,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 typedef DotLottieChildBuilder = Widget Function(
-    BuildContext context,
-    // Widget child,
-    DotLottie? dotLottie,
-    );
+  BuildContext context,
+  // Widget child,
+  DotLottie? dotLottie,
+);
 
 typedef DotLottieErrorWidgetBuilder = Widget Function(
-    BuildContext context,
-    Object error,
-    StackTrace? stackTrace,
-    );
+  BuildContext context,
+  Object error,
+  StackTrace? stackTrace,
+);
 
 /// A widget that loads a DotLottie file.
 ///
@@ -33,7 +33,6 @@ typedef DotLottieErrorWidgetBuilder = Widget Function(
 ///
 
 class DotLottieLoader extends StatefulWidget {
-
   @override
   State<DotLottieLoader> createState() => _DotLottieLoaderState();
 
@@ -43,23 +42,21 @@ class DotLottieLoader extends StatefulWidget {
 
   DotLottieLoader.fromAsset(String name,
       {super.key,
-        AssetBundle? bundle,
-        String? package,
-        required this.frameBuilder,
-        this.errorBuilder})
+      AssetBundle? bundle,
+      String? package,
+      required this.frameBuilder,
+      this.errorBuilder})
       : dotlottieLoader = AssetLoader(name, bundle: bundle, package: package);
 
   DotLottieLoader.fromNetwork(String url,
       {super.key,
-        Map<String, String>? headers,
-        required this.frameBuilder,
-        this.errorBuilder})
+      Map<String, String>? headers,
+      required this.frameBuilder,
+      this.errorBuilder})
       : dotlottieLoader = NetworkLoader(url, headers: headers);
 
   DotLottieLoader.fromFile(Object file,
-      {super.key,
-        required this.frameBuilder,
-        this.errorBuilder})
+      {super.key, required this.frameBuilder, this.errorBuilder})
       : dotlottieLoader = FileLoader(file);
 }
 
@@ -69,12 +66,24 @@ class _DotLottieLoaderState extends State<DotLottieLoader> {
   @override
   void initState() {
     super.initState();
-    var provider = widget.dotlottieLoader;
-    _loadingFuture = widget.dotlottieLoader.load().then((dotlottie) {
-      if (mounted && widget.dotlottieLoader == provider) {
-        //widget.onLoaded?.call(composition);
-      }
+    _load();
+  }
 
+  @override
+  void didUpdateWidget(DotLottieLoader oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.dotlottieLoader != widget.dotlottieLoader) {
+      _load();
+    }
+  }
+
+  void _load() {
+    //var provider = widget.dotlottieLoader;
+    _loadingFuture = widget.dotlottieLoader.load().then((dotlottie) {
+      //if (mounted && widget.dotlottieLoader == provider) {
+      //widget.onLoaded?.call(composition);
+      // }
       return dotlottie;
     });
   }
@@ -92,12 +101,11 @@ class _DotLottieLoaderState extends State<DotLottieLoader> {
               return ErrorWidget(snapshot.error!);
             }
           }
-
-          if (widget.frameBuilder != null && snapshot.hasData) {
+          if (widget.frameBuilder != null) {
             return widget.frameBuilder!(context, snapshot.data);
-          } else {
-            return Container();
           }
+
+          return Container();
         });
   }
 }
