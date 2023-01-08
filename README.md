@@ -11,29 +11,83 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### dotLottieLoader for Flutter
 
-## Features
+dotLottieLoader is a library to help downloading and deflating a .lottie file, giving access to the animation,
+as well as the assets included in the bundle. This repository is an unofficial conversion of the [dotottieloader-android](https://github.com/dotlottie/dotlottieloader-android) library in pure Dart. 
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+It works on Android, iOS, macOS, linux, windows and web.
 
-## Getting started
+## Install
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+flutter pub add dotlottie_loader
+```
+
+Also install [lottie](https://pub.dev/packages/lottie) package to render the animations.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+#### loading from app assets
 
 ```dart
-const like = 'sample';
+ DotLottieLoader.fromAsset("assets/anim2.lottie",
+                  frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                if (dotlottie != null) {
+                  return Lottie.memory(dotlottie.animations.values.single);
+                } else {
+                  return Container();
+                }
+              }),
 ```
 
-## Additional information
+#### loading from network
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+ DotLottieLoader.fromNetwork(
+                "https://github.com/sartajroshan/dotlottieloader-flutter/raw/master/example/assets/animation.lottie",
+                frameBuilder: (ctx, dotlottie) {
+                  if (dotlottie != null) {
+                    return Lottie.memory(dotlottie!.animations.values.single);
+                  } else {
+                    return Container();
+                  }
+                },
+                errorBuilder: (ctx, e, s) {
+                  print(s);
+                  return Text(e.toString());
+                },
+              ),
+```
+
+#### DotLottie data
+
+```dart
+class ManifestAnimation {
+   String id;
+  double speed;
+  String? themeColor;
+  bool loop;
+
+  ManifestAnimation(this.id, this.speed, this.themeColor, this.loop);
+}
+
+class Manifest {
+  String? generator, author;
+  int? revision;
+  String? version;
+  late List<ManifestAnimation> animations;
+  Map<String, dynamic>? custom;
+
+  Manifest(this.generator, this.author, this.revision, this.version,
+      this.animations, this.custom);
+}
+
+class DotLottie {
+  Manifest? manifest;
+  Map<String, Uint8List> animations;
+  Map<String, Uint8List> images;
+
+  DotLottie(this.manifest, this.animations, this.images);
+}
+```
