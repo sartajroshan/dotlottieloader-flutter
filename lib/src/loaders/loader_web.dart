@@ -2,6 +2,9 @@ import 'dart:html';
 import 'dart:typed_data';
 // ignore_for_file: avoid_web_libraries_in_flutter
 
+/**
+ * Load file from network
+ */
 Future<Uint8List> loadHttp(Uri uri, {Map<String, String>? headers}) async {
   var request = await HttpRequest.request(uri.toString(),
       requestHeaders: headers, responseType: 'blob');

@@ -100,4 +100,4 @@ class DotLottie {
 }
 ```
 
-## View documentation, FAQ, help, examples, and more at [dotlottie.io](http://dotlottie.io/)
+## View documentation, FAQ, help, examples, and more at [dotlottie.io](https://dotlottie.io/)

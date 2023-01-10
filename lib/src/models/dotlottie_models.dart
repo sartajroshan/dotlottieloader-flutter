@@ -1,5 +1,10 @@
 import 'dart:typed_data';
 
+/**
+ * Animation spec as declared in the [Manifest].
+ * All dotLotties MUST contain at least one
+ */
+
 class ManifestAnimation {
   late String id;
   double speed = 1.0;
@@ -24,6 +29,11 @@ class ManifestAnimation {
   }
 }
 
+/**
+ * The manifest for a dotLottie
+ * provides information about the animation, and
+ * describes the contents of the bundle
+ */
 class Manifest {
   String? generator, author;
   int? revision;
@@ -60,6 +70,9 @@ class Manifest {
   }
 }
 
+/**
+ * A DotLottie file
+ */
 class DotLottie {
   Manifest? manifest;
   Map<String, Uint8List> animations;

@@ -2,9 +2,11 @@ import '../dotlottie_converter.dart';
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import '../loaders/abstarct_loader.dart';
 import '../models/dotlottie_models.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
+/**
+ * Concrete [AbstractLoader] that loads from memory
+ */
 class MemoryLoader extends AbstractLoader {
   final Uint8List bytes;
 

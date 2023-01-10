@@ -1,10 +1,12 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 
 final HttpClient _sharedHttpClient = HttpClient()..autoUncompress = false;
 
+/**
+ * Load file from network
+ */
 Future<Uint8List> loadHttp(Uri uri, {Map<String, String>? headers}) async {
   var request = await _sharedHttpClient.getUrl(uri);
   headers?.forEach((String name, String value) {

@@ -4,8 +4,14 @@ import '../models/dotlottie_models.dart';
 import '../util.dart';
 import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as network;
 
+/**
+ * Concrete [AbstractLoader] that loads from network
+ */
 class NetworkLoader extends AbstractLoader {
   final String url;
+  /**
+   * Custom http headers
+   */
   final Map<String, String>? headers;
 
   String get keyName => url.lastSegmentName();

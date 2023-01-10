@@ -5,6 +5,9 @@ import '../models/dotlottie_models.dart';
 import 'abstarct_loader.dart';
 import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as io;
 
+/**
+ * Concrete [AbstractLoader] that loads a File
+ */
 class FileLoader extends AbstractLoader {
   final Object file;
 

@@ -2,6 +2,9 @@ import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+/**
+* library samples
+* */
 void main() {
   runApp(const MyApp());
 }
@@ -37,8 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: Column(
             children: [
 
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 "https://github.com/sartajroshan/dotlottieloader-flutter/raw/master/example/assets/animation.lottie",
                 frameBuilder: (ctx, dotlottie) {
                   if (dotlottie != null) {
-                    return Lottie.memory(dotlottie!.animations.values.single,
+                    return Lottie.memory(dotlottie.animations.values.single,
                     );
                   } else {
                     return Container();
