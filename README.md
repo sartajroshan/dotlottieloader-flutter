@@ -1,7 +1,7 @@
 
 # dotLottieLoader for Flutter
 
-[![pub package](https://img.shields.io/pub/v/lottie.svg)](https://pub.dev/packages/dotlottie_loader)
+[![pub package](https://img.shields.io/pub/v/dotlottie_loader.svg)](https://pub.dev/packages/dotlottie_loader)
 
 dotLottieLoader is a library to help downloading and deflating a .lottie file, giving access to the animation,
 as well as the assets included in the bundle. This repository is an unofficial conversion of the [dotottieloader-android](https://github.com/dotlottie/dotlottieloader-android) library in pure Dart. 
