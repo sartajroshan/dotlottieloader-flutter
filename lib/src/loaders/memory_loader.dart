@@ -1,7 +1,7 @@
-import 'package:dotlottie_loader/dotlottie_converter.dart';
+import '../dotlottie_converter.dart';
 import 'package:dotlottie_loader/dotlottie_loader.dart';
-import 'package:dotlottie_loader/loaders/abstarct_loader.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
+import '../loaders/abstarct_loader.dart';
+import '../models/dotlottie_models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 

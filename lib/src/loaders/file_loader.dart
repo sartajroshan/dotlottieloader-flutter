@@ -1,7 +1,8 @@
-import 'package:dotlottie_loader/dotlottie_converter.dart';
-import 'package:dotlottie_loader/loaders/abstarct_loader.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
-import 'package:dotlottie_loader/util.dart';
+import 'package:dotlottie_loader/src/util.dart';
+
+import '../dotlottie_converter.dart';
+import '../models/dotlottie_models.dart';
+import 'abstarct_loader.dart';
 import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as io;
 
 class FileLoader extends AbstractLoader {

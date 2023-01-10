@@ -1,5 +1,5 @@
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
 import 'package:flutter/foundation.dart';
+import '../models/dotlottie_models.dart';
 
 abstract class AbstractLoader {
   AbstractLoader();

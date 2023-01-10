@@ -1,17 +1,7 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+# dotLottieLoader for Flutter
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-### dotLottieLoader for Flutter
+[![pub package](https://img.shields.io/pub/v/lottie.svg)](https://pub.dev/packages/dotlottie_loader)
 
 dotLottieLoader is a library to help downloading and deflating a .lottie file, giving access to the animation,
 as well as the assets included in the bundle. This repository is an unofficial conversion of the [dotottieloader-android](https://github.com/dotlottie/dotlottieloader-android) library in pure Dart. 
@@ -60,6 +50,24 @@ Also install [lottie](https://pub.dev/packages/lottie) package to render the ani
               ),
 ```
 
+#### loading with images
+
+```dart
+DotLottieLoader.fromAsset("assets/animation_external_image.lottie",
+frameBuilder: (ctx, dotlottie) {
+if (dotlottie != null) {
+return Lottie.memory(dotlottie.animations.values.single,
+imageProviderFactory: (asset) {
+return MemoryImage(dotlottie.images[asset.fileName]!);
+}
+);
+} else {
+return Container();
+}
+})
+```
+
+
 #### DotLottie data
 
 ```dart
@@ -91,3 +99,5 @@ class DotLottie {
   DotLottie(this.manifest, this.animations, this.images);
 }
 ```
+
+## View documentation, FAQ, help, examples, and more at [dotlottie.io](http://dotlottie.io/)

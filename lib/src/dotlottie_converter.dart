@@ -3,8 +3,10 @@ import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:archive/archive.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
-import 'package:dotlottie_loader/util.dart';
+import 'package:dotlottie_loader/src/util.dart';
+
+import 'models/dotlottie_models.dart';
+
 
 class DotLottieConverter {
   static Future<DotLottie> fromByteData(ByteData data, {String? name}) {

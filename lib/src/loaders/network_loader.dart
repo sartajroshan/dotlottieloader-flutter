@@ -1,7 +1,7 @@
-import 'package:dotlottie_loader/dotlottie_converter.dart';
-import 'package:dotlottie_loader/loaders/abstarct_loader.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
-import 'package:dotlottie_loader/util.dart';
+import '../dotlottie_converter.dart';
+import '../loaders/abstarct_loader.dart';
+import '../models/dotlottie_models.dart';
+import '../util.dart';
 import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as network;
 
 class NetworkLoader extends AbstractLoader {

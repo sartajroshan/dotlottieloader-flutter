@@ -1,13 +1,12 @@
-library dotlottie_loader;
 
-import 'package:dotlottie_loader/loaders/abstarct_loader.dart';
-import 'package:dotlottie_loader/loaders/asset_loader.dart';
-import 'package:dotlottie_loader/loaders/file_loader.dart';
-import 'package:dotlottie_loader/loaders/network_loader.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
+
+import 'loaders/abstarct_loader.dart';
+import 'loaders/asset_loader.dart';
+import 'loaders/file_loader.dart';
+import 'loaders/network_loader.dart';
+import 'models/dotlottie_models.dart';
 
 typedef DotLottieChildBuilder = Widget Function(
   BuildContext context,

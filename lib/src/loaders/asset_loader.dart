@@ -1,9 +1,7 @@
-import 'package:dotlottie_loader/dotlottie_converter.dart';
-import 'package:dotlottie_loader/dotlottie_loader.dart';
-import 'package:dotlottie_loader/loaders/abstarct_loader.dart';
-import 'package:dotlottie_loader/models/dotlottie_models.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import '../dotlottie_converter.dart';
+import '../models/dotlottie_models.dart';
+import 'abstarct_loader.dart';
 
 class AssetLoader extends AbstractLoader {
   final String assetName;
