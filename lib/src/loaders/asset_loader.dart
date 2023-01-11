@@ -3,9 +3,7 @@ import '../dotlottie_converter.dart';
 import '../models/dotlottie_models.dart';
 import 'abstarct_loader.dart';
 
-/**
- * Concrete [AbstractLoader] that loads an app asset
- */
+/// Concrete [AbstractLoader] that loads an app asset
 class AssetLoader extends AbstractLoader {
   final String assetName;
 
@@ -28,7 +26,6 @@ class AssetLoader extends AbstractLoader {
       return await DotLottieConverter.fromByteData(data, name: keyName);
     });
   }
-
 
   @override
   bool operator ==(dynamic other) {

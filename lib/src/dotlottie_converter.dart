@@ -7,9 +7,7 @@ import 'package:dotlottie_loader/src/util.dart';
 
 import 'models/dotlottie_models.dart';
 
-/**
- * Converter which deflate the .lottie file to DotLottie object
- */
+/// Converter which deflate the .lottie file to DotLottie object
 class DotLottieConverter {
   static Future<DotLottie> fromByteData(ByteData data, {String? name}) {
     return fromBytes(data.buffer.asUint8List(), name: name);

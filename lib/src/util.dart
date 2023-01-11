@@ -1,10 +1,9 @@
-
 extension StringParsing on String {
-  String lastSegmentName()  {
+  String lastSegmentName() {
     return split("/").last;
   }
 
-  String withoutExt()  {
+  String withoutExt() {
     return split(".").first;
   }
 }

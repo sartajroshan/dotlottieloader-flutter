@@ -4,9 +4,7 @@ import '../loaders/abstarct_loader.dart';
 import '../models/dotlottie_models.dart';
 import 'package:flutter/services.dart';
 
-/**
- * Concrete [AbstractLoader] that loads from memory
- */
+/// Concrete [AbstractLoader] that loads from memory
 class MemoryLoader extends AbstractLoader {
   final Uint8List bytes;
 
@@ -15,7 +13,6 @@ class MemoryLoader extends AbstractLoader {
   @override
   Future<DotLottie> load() {
     return sharedLottieCache.putIfAbsent(this, () async {
-
       return await DotLottieConverter.fromBytes(bytes);
     });
   }

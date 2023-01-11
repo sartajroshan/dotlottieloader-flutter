@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import '../models/dotlottie_models.dart';
 
-/**
- * Abstracted loader for internal resources
- */
+/// Abstracted loader for internal resources
 abstract class AbstractLoader {
   AbstractLoader();
 

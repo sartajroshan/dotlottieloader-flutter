@@ -42,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(
             children: [
-
               ///Simple .Lottie Animation
               DotLottieLoader.fromAsset("assets/animation.lottie",
                   frameBuilder: (ctx, dotlottie) {
@@ -59,7 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 "https://github.com/sartajroshan/dotlottieloader-flutter/raw/master/example/assets/animation.lottie",
                 frameBuilder: (ctx, dotlottie) {
                   if (dotlottie != null) {
-                    return Lottie.memory(dotlottie.animations.values.single,
+                    return Lottie.memory(
+                      dotlottie.animations.values.single,
                     );
                   } else {
                     return Container();
@@ -72,33 +72,32 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 20),
 
               ///.lottie animation with external image
-              DotLottieLoader.fromAsset("assets/animation_external_image.lottie",
+              DotLottieLoader.fromAsset(
+                  "assets/animation_external_image.lottie",
                   frameBuilder: (ctx, dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single,
-                          imageProviderFactory: (asset) {
-                            return MemoryImage(dotlottie.images[asset.fileName]!);
-                          }
-                      );
-                    } else {
-                      return Container();
-                    }
-                  }),
+                if (dotlottie != null) {
+                  return Lottie.memory(dotlottie.animations.values.single,
+                      imageProviderFactory: (asset) {
+                    return MemoryImage(dotlottie.images[asset.fileName]!);
+                  });
+                } else {
+                  return Container();
+                }
+              }),
               const SizedBox(height: 20),
 
               ///.lottie animation with inline image
               DotLottieLoader.fromAsset("assets/animation_inline_image.lottie",
                   frameBuilder: (ctx, dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single,
-                        imageProviderFactory: (asset) {
-                       return MemoryImage(dotlottie.images[asset.fileName]!);
-                        }
-                      );
-                    } else {
-                      return Container();
-                    }
-                  }),
+                if (dotlottie != null) {
+                  return Lottie.memory(dotlottie.animations.values.single,
+                      imageProviderFactory: (asset) {
+                    return MemoryImage(dotlottie.images[asset.fileName]!);
+                  });
+                } else {
+                  return Container();
+                }
+              }),
             ],
           ),
         ),
