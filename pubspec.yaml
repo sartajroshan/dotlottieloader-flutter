@@ -3,6 +3,7 @@ description: dotLottieLoader is a library to help downloading and deflating a .l
 version: 0.0.3
 # homepage: https://github.com/sartajroshan/dotlottieloader-flutter
 repository: https://github.com/sartajroshan/dotlottieloader-flutter
+issue_tracker: https://github.com/sartajroshan/dotlottieloader-flutter/issues
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
