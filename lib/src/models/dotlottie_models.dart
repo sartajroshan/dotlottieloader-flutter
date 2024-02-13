@@ -13,7 +13,12 @@ class ManifestAnimation {
 
   ManifestAnimation.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    speed = json['speed'] ?? 1.0;
+    var speed = json['speed'];
+    if (speed is int) {
+      this.speed = speed.toDouble();
+    } else {
+      this.speed = speed ?? 1.0;
+    }
     themeColor = json['themeColor'];
     loop = json['loop'] ?? false;
   }
