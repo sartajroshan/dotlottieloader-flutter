@@ -53,18 +53,20 @@ Also install [lottie](https://pub.dev/packages/lottie) package to render the ani
 #### loading with images
 
 ```dart
-DotLottieLoader.fromAsset("assets/animation_external_image.lottie",
-frameBuilder: (ctx, dotlottie) {
-if (dotlottie != null) {
-return Lottie.memory(dotlottie.animations.values.single,
-imageProviderFactory: (asset) {
-return MemoryImage(dotlottie.images[asset.fileName]!);
-}
-);
-} else {
-return Container();
-}
-})
+ DotLottieLoader.fromAsset(
+          "assets/animation_external_image.lottie",
+          frameBuilder: (ctx, dotlottie) {
+            if (dotlottie != null) {
+                return Lottie.memory(dotlottie.animations.values.single,
+                        imageProviderFactory: (asset) {
+                          return MemoryImage(dotlottie.images[asset.fileName]!);
+                        },
+                      );
+            } else {
+              return Container();
+            }
+          },
+ )
 ```
 
 
