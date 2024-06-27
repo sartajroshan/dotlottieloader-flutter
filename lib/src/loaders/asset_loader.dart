@@ -28,7 +28,7 @@ class AssetLoader extends AbstractLoader {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (other.runtimeType != runtimeType) return false;
     return other is AssetLoader &&
         other.keyName == keyName &&

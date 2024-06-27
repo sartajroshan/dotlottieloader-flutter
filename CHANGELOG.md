@@ -1,3 +1,7 @@
+## 0.0.4
+
+* #1 Fix. Crash on lottie files having "speed" type int.
+
 ## 0.0.3
 
 * Documentation added.
