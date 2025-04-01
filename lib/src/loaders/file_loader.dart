@@ -3,7 +3,7 @@ import 'package:dotlottie_loader/src/util.dart';
 import '../dotlottie_converter.dart';
 import '../models/dotlottie_models.dart';
 import 'abstarct_loader.dart';
-import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as io;
+import 'loader_io.dart' if (dart.library.js_interop) 'loader_web.dart' as io;
 
 /// Concrete [AbstractLoader] that loads a File
 class FileLoader extends AbstractLoader {
