@@ -1,3 +1,7 @@
+## 0.0.6
+
+* #4 add WASM support
+
 ## 0.0.5
 
 * #3 Update package:archive to >=4.0.0 constraint

@@ -2,7 +2,7 @@ import '../dotlottie_converter.dart';
 import '../loaders/abstarct_loader.dart';
 import '../models/dotlottie_models.dart';
 import '../util.dart';
-import 'loader_io.dart' if (dart.library.html) 'loader_web.dart' as network;
+import 'loader_io.dart' if (dart.library.js_interop) 'loader_web.dart' as network;
 
 /// Concrete [AbstractLoader] that loads from network
 class NetworkLoader extends AbstractLoader {
