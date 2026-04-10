@@ -1,3 +1,58 @@
+> [!WARNING]
+> **Maintenance mode / deprecated for new projects**
+>
+> This package is now in **maintenance mode** and is **not recommended for new projects**.
+> If you're starting a new Flutter app, please use the official
+> [`dotlottie-flutter`](https://github.com/LottieFiles/dotlottie-flutter) package maintained by the LottieFiles team.
+>
+> `dotlottie_loader` will continue to receive critical fixes for existing users, but no major new features are planned.
+
+A lightweight Flutter package to load and extract `.lottie` files.
+
+---
+
+## Why this notice?
+
+`dotlottie_loader` was originally created as a lightweight way to load and extract `.lottie` files in Flutter.
+
+Today, the official LottieFiles team maintains
+[`dotlottie-flutter`](https://github.com/LottieFiles/dotlottie-flutter), which is the better long-term choice for most new projects.
+
+This package remains available for existing users who already depend on its current workflow.
+
+---
+
+## Should I still use this package?
+
+You may continue using `dotlottie_loader` if:
+
+- your app already depends on it
+- you prefer its current loader-style workflow
+- you need a lightweight helper around `.lottie` extraction
+- migrating right now is not convenient
+
+For **new projects**, we strongly recommend using the official package instead.
+
+---
+
+## Migration to `dotlottie-flutter`
+
+If you're starting fresh, use the official package:
+[`dotlottie-flutter`](https://github.com/LottieFiles/dotlottie-flutter)
+
+Basic migration steps:
+
+1. Remove `dotlottie_loader` from `pubspec.yaml`
+2. Add the official `dotlottie-flutter` package
+3. Replace `DotLottieLoader(...)` usage with the official widget/API
+4. Test asset loading, network loading, and animation playback in your app
+5. Verify behavior on Android, iOS, and Web if applicable
+
+> Note: `dotlottie_loader` and `dotlottie-flutter` do not expose the same API, so small code changes may be required during migration.
+
+A fuller migration guide may be added later.
+
+---
 
 # dotLottieLoader for Flutter
 
