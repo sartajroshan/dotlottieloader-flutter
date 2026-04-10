@@ -1,3 +1,11 @@
+## 0.0.6
+
+- Mark package as **maintenance mode / deprecated for new projects**
+- Recommend the official `dotlottie-flutter` package by LottieFiles for new integrations
+- README updated with migration guidance
+- No breaking changes
+
+  
 ## 0.0.5
 
 * #3 Update package:archive to >=4.0.0 constraint
