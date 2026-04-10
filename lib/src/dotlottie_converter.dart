@@ -30,7 +30,7 @@ class DotLottieConverter {
       Future.forEach(archive, (file) async {
         if (file.name.toLowerCase() == 'manifest.json') {
           try {
-            final content = file.content as Uint8List;
+            final content = file.content;
             final jsonString = const Utf8Decoder()
                 .convert(content.toList()); //File.fromRawPath(content).
             //print(jsonString);
