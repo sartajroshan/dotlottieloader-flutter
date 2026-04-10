@@ -1,6 +1,6 @@
 name: dotlottie_loader
-description: dotLottieLoader is a library to help downloading and deflating a .lottie file.
-version: 0.0.5
+description: Lightweight dotLottie loader for Flutter. Now in maintenance mode; for new projects, use the official dotlottie-flutter package by LottieFiles.
+version: 0.0.6
 # homepage: https://github.com/sartajroshan/dotlottieloader-flutter
 repository: https://github.com/sartajroshan/dotlottieloader-flutter
 issue_tracker: https://github.com/sartajroshan/dotlottieloader-flutter/issues
